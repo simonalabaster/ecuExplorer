@@ -13,7 +13,7 @@ densoecu::densoecu(string portname)
 	baudrate = 0;
 	set_state(normal);
 	listenmode = false;
-	l = new log();
+	l = new eculog();
 	lastrsp = 0;
 	doecusim = false;
 	kernel_flash_enabled = false;
@@ -28,7 +28,7 @@ densoecu::~densoecu(void)
 	delete[] page4k;
 }
 
-void densoecu::addlog(log *_l)
+void densoecu::addlog(eculog *_l)
 {
 	delete l;
 	l = _l;

@@ -439,7 +439,7 @@ CATCHCATCH("frameResourceTree::SetNodeText()");
 	return ERR_SUCCESS;
 }
 
-void frameResourceTree::OnUpdateNodeText(WPARAM wParam,LPARAM lParam)
+LRESULT frameResourceTree::OnUpdateNodeText(WPARAM wParam,LPARAM lParam)
 {
 	CString sError;
 
@@ -455,7 +455,7 @@ CATCHCATCH("frameResourceTree::OnUpdateNodeText()");
 	if(bExceptionFlag == EXEPT_ABORT)
 		nuke();
 
-	return;
+	return ERR_SUCCESS;
 }
 #if defined(ENABLE_EDIT_ROM)
 long frameResourceTree::AddROMMaps(LPSTRUCT_ROMITEM lpRomItem,HTREEITEM hParent,int fhROM,int iOffset_ram)

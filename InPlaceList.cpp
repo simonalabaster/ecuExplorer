@@ -161,7 +161,7 @@ CInPlaceList::CInPlaceList(CWnd* pParent, CRect& rect, DWORD dwStyle, UINT nID,
 	CClientDC dc(GetParent());
 	CFont* pOldFont = dc.SelectObject(pParent->GetFont());
 
-	for (i = 0; i < Items.GetSize(); i++) 
+	for (int i = 0; i < Items.GetSize(); i++) 
 		nMaxLength = max(nMaxLength, dc.GetTextExtent(Items[i]).cx);
 
 	nMaxLength += (::GetSystemMetrics(SM_CXVSCROLL) + dc.GetTextExtent(_T(" ")).cx*2);

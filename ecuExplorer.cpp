@@ -2682,7 +2682,7 @@ CATCHCATCH("ecuExplorer::ecuFlash()");
 DWORD WINAPI threadEcuFlash(LPSTRUCT_ECUFLASHTHREAD lpBlock)
 {
 	CString sError;
-	log l;
+	eculog l;
 	unsigned char cStorage[255];
 	int iResult = 0;
 

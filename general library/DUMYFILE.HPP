@@ -43,8 +43,8 @@ class CDummyFile : public CFile
       virtual void  Close( void );
       virtual void  Flush( void );
       virtual DWORD GetError( void ) const;
-      virtual DWORD GetLength( void ) const;
-      virtual DWORD GetPosition( void ) const;
+      virtual ULONGLONG GetLength( void ) const;
+      virtual ULONGLONG GetPosition( void ) const;
       virtual BOOL  GetStatus( CFileStatus& status );
       virtual BOOL  GetStatus( LPCTSTR name, CFileStatus& status );
       virtual void  LockRange( DWORD position, DWORD count );

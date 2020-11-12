@@ -10,7 +10,7 @@ using namespace std;
 class ecutools
 {
 private:
-	log *l;
+	eculog *l;
 	densoecu *ecu;
 	ecumodel model;
 	enum {kt_oecu} kerneltype;
@@ -31,7 +31,7 @@ private:
 public:
 	ecutools(string portname);
 	~ecutools(void);
-	void addlog(log *_l);
+	void addlog(eculog *_l);
 	void set_model(ecumodel _model);
 	bool read_image(string imagefile);
 	bool flash_image(bool dowrite);

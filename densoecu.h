@@ -23,7 +23,7 @@ const static int szpage = 0x4000;
 class densoecu
 {
 private:
-	log *l;
+	eculog *l;
 	densocomm *dc;
 	ecustate state;
 	ecumodel model;
@@ -45,7 +45,7 @@ private:
 public:
 	densoecu(string portname);
 	~densoecu(void);
-	void addlog(log *_l);
+	void addlog(eculog *_l);
 	bool open();
 	void close();
 	bool listen();

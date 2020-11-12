@@ -5,7 +5,7 @@ densocomm::densocomm(string portname)
 {
 	s.set_baud(4800);
 	s.set_port(portname);
-	l = new log();
+	l = new eculog();
 }
 
 densocomm::~densocomm(void)
@@ -13,7 +13,7 @@ densocomm::~densocomm(void)
 	s.close();
 }
 
-void densocomm::addlog(log *_l)
+void densocomm::addlog(eculog *_l)
 {
 	delete l;
 	l = _l;

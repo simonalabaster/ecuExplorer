@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{20a28db4-a7cc-4c7b-a207-34cabd4303ab}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;rc;def;r;odl;idl;hpj;bat</Extensions>
+    </Filter>
+    <Filter Include="Source Files\gui.cpp">
+      <UniqueIdentifier>{28188199-5d94-47f2-8fb1-ad8c895dee14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\diagnostics.cpp">
+      <UniqueIdentifier>{e9816184-ebb5-4a6e-93f3-b024c7a9ecaa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ecuflash.cpp">
+      <UniqueIdentifier>{4864641e-d786-4af8-b082-4ef3229fa84b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{6427e023-05f6-4c38-b2bd-4cfd8d8409ac}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl</Extensions>
+    </Filter>
+    <Filter Include="Header Files\gui.h">
+      <UniqueIdentifier>{9d055b65-5804-42b9-bc68-db6e8baf2b86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\diagnostics.h">
+      <UniqueIdentifier>{400b7d98-9f49-447a-9207-85e104860e9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ecuflash.h">
+      <UniqueIdentifier>{8d98866d-e878-4130-8aa7-8299a45be1e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{8d94076f-d481-4745-a5da-966bd9a5b337}</UniqueIdentifier>
+      <Extensions>ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AW_CMultiViewSplitter.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogCOMM.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogEcuFlash.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogEcuQuery.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogEditor_dataitem.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogEditor_label.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ecuExplorer.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameCommSerial.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameDataItems.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameDTCReader.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameErrorLog.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameGrid.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameList.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameLogFile.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameMain.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameRealtime.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameResourceTree.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameRomTables.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameTableEditor.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="frameTroubleCodes.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="GridCtrl.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="GridDropTarget.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="handlerError.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="InPlaceEdit.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="InPlaceList.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="STabCtrl.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="TitleTip.cpp">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="commSerial.cpp">
+      <Filter>Source Files\diagnostics.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="protocolSSM.cpp">
+      <Filter>Source Files\diagnostics.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="densocomm.cpp">
+      <Filter>Source Files\ecuflash.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="densoecu.cpp">
+      <Filter>Source Files\ecuflash.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="ecutools.cpp">
+      <Filter>Source Files\ecuflash.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="error.cpp">
+      <Filter>Source Files\ecuflash.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="log.cpp">
+      <Filter>Source Files\ecuflash.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="serial.cpp">
+      <Filter>Source Files\ecuflash.cpp</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="resources.rc">
+      <Filter>Source Files\gui.cpp</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AW_CMultiViewSplitter.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="CellRange.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="definitionError.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="definitionLocal.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="definitionSSM.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogCOMM.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogEcuFlash.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogEcuQuery.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogEditor_dataitem.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="dialogEditor_label.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ecuExplorer.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameCommSerial.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameDataItems.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameDTCReader.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameErrorLog.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameGrid.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameList.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameLogFile.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameMain.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameRealtime.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameResourceTree.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameRomTables.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameTableEditor.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="frameTroubleCodes.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="GridCtrl.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="GridDropTarget.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="handlerError.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="InPlaceEdit.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="InPlaceList.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="MemDC.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="STabCtrl.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfx.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="TitleTip.h">
+      <Filter>Header Files\gui.h</Filter>
+    </ClInclude>
+    <ClInclude Include="commSerial.h">
+      <Filter>Header Files\diagnostics.h</Filter>
+    </ClInclude>
+    <ClInclude Include="protocolSSM.h">
+      <Filter>Header Files\diagnostics.h</Filter>
+    </ClInclude>
+    <ClInclude Include="densocomm.h">
+      <Filter>Header Files\ecuflash.h</Filter>
+    </ClInclude>
+    <ClInclude Include="densoecu.h">
+      <Filter>Header Files\ecuflash.h</Filter>
+    </ClInclude>
+    <ClInclude Include="ecutools.h">
+      <Filter>Header Files\ecuflash.h</Filter>
+    </ClInclude>
+    <ClInclude Include="error.h">
+      <Filter>Header Files\ecuflash.h</Filter>
+    </ClInclude>
+    <ClInclude Include="log.h">
+      <Filter>Header Files\ecuflash.h</Filter>
+    </ClInclude>
+    <ClInclude Include="serial.h">
+      <Filter>Header Files\ecuflash.h</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Black_Chip.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="ecuExplorer.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="idr_data.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Red_Chip.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="BuildHistory.txt" />
+    <Text Include="scrap.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="KERNEL.HEX" />
+  </ItemGroup>
+</Project>

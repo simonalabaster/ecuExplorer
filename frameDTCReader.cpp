@@ -128,7 +128,7 @@ CATCHCATCH("frameDTCReader::ResizeSplitter()");
 	return;
 }
 
-void frameDTCReader::OnUpdateCurrentDTC(WPARAM wParam,LPARAM lParam)
+LRESULT frameDTCReader::OnUpdateCurrentDTC(WPARAM wParam,LPARAM lParam)
 {
 	CString sError;
 	LPSTRUCT_DTCITEM lpDTCItem = (LPSTRUCT_DTCITEM)lParam;
@@ -157,10 +157,10 @@ CATCHCATCH("frameDTCReader::OnUpdateCurrentDTC()");
 	if(bExceptionFlag == EXEPT_ABORT)
 		nuke();
 
-	return;
+	return ERR_SUCCESS;
 }
 
-void frameDTCReader::OnUpdateHistoricDTC(WPARAM wParam,LPARAM lParam)
+LRESULT frameDTCReader::OnUpdateHistoricDTC(WPARAM wParam,LPARAM lParam)
 {
 	CString sError;
 	LPSTRUCT_DTCITEM lpDTCItem = (LPSTRUCT_DTCITEM)lParam;
@@ -189,7 +189,7 @@ CATCHCATCH("frameDTCReader::OnUpdateHistoricDTC()");
 	if(bExceptionFlag == EXEPT_ABORT)
 		nuke();
 
-	return;
+	return ERR_SUCCESS;
 }
 
 void frameDTCReader::OnPauseDTC()

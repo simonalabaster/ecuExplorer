@@ -26,7 +26,7 @@ public:
 	HTREEITEM GetNode(HTREEITEM hItem,LPCTSTR szNodeName);
 	void OnNodeSelect(NMHDR* pNMHDR, LRESULT* pResult);
 	long SetNodeText(DWORD dwTagData,LPCTSTR szDisplayText);
-	void OnUpdateNodeText(WPARAM wParam,LPARAM lParam);
+	LRESULT OnUpdateNodeText(WPARAM wParam,LPARAM lParam);
 #if defined(ENABLE_EDIT_ROM)
 	long AddROMMaps(LPSTRUCT_ROMITEM lpRomItem,HTREEITEM hParent,int fhROM,int iOffset_ram);
 #endif

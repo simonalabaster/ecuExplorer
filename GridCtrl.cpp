@@ -419,7 +419,7 @@ BOOL CGridCtrl::Create(const RECT& rect, CWnd* pParentWnd, UINT nID, DWORD dwSty
     END_CATCH
 
     for (int i = 0; i < m_nRows; i++) m_arRowHeights[i] = m_nDefCellHeight;
-    for (i = 0; i < m_nCols; i++)      m_arColWidths[i] = m_nDefCellWidth;
+    for (int i = 0; i < m_nCols; i++)      m_arColWidths[i] = m_nDefCellWidth;
 
     ResetScrollBars();
     return TRUE;
@@ -1624,7 +1624,7 @@ void CGridCtrl::SetSelectedRange(int nMinRow, int nMinCol, int nMaxRow, int nMax
     // then copy them to the newly created list, and mark all these cells as
     // selected
     if (!GetSingleRowSelection())
-    for (pos = m_PrevSelectedCellMap.GetStartPosition(); pos != NULL; /* nothing */)
+    for (auto pos = m_PrevSelectedCellMap.GetStartPosition(); pos != NULL; /* nothing */)
     {
         DWORD key;
         CCellID cell;
@@ -2186,6 +2186,7 @@ CCellID CGridCtrl::GetCellFromPt(CPoint point, BOOL bAllowFixedCellCheck /*=TRUE
 {  
     CCellID idTopLeft = GetTopleftNonFixedCell();
     CCellID cellID; // return value
+    int col, row = 0;
 
     // calculate column index
     int fixedColWidth = GetFixedColumnWidth();
@@ -2195,7 +2196,7 @@ CCellID CGridCtrl::GetCellFromPt(CPoint point, BOOL bAllowFixedCellCheck /*=TRUE
     else if (point.x < fixedColWidth) // in fixed col
     {
         int xpos = 0;
-        for (int col = 0; col < m_nFixedCols; col++)
+        for (col = 0; col < m_nFixedCols; col++)
         {
             xpos += GetColumnWidth(col);
             if (xpos > point.x) break;
@@ -2224,7 +2225,7 @@ CCellID CGridCtrl::GetCellFromPt(CPoint point, BOOL bAllowFixedCellCheck /*=TRUE
     else if (point.y < fixedRowHeight) // in fixed col
     {
         int ypos = 0;
-        for (int row = 0; row < m_nFixedRows; row++)
+        for (row = 0; row < m_nFixedRows; row++)
         {
             ypos += GetRowHeight(row);
             if (ypos > point.y) break;
@@ -2234,7 +2235,7 @@ CCellID CGridCtrl::GetCellFromPt(CPoint point, BOOL bAllowFixedCellCheck /*=TRUE
     else
     {
         int ypos = fixedRowHeight;
-        for (int row = idTopLeft.row; row < GetRowCount(); row++)
+        for (row = idTopLeft.row; row < GetRowCount(); row++)
         {
             ypos += GetRowHeight(row);
             if (ypos > point.y) break;
@@ -2274,12 +2275,13 @@ CCellRange CGridCtrl::GetVisibleNonFixedCellRange(LPRECT pRect /*=NULL*/) const
 {
     CRect rect;
     GetClientRect(rect);
+    int i = 0;
 
     CCellID idTopLeft = GetTopleftNonFixedCell();
 
     // calc bottom
     int bottom = GetFixedRowHeight();
-    for (int i = idTopLeft.row; i < GetRowCount(); i++)
+    for (i = idTopLeft.row; i < GetRowCount(); i++)
     {
         bottom += GetRowHeight(i);
         if (bottom >= rect.bottom) {
@@ -2314,12 +2316,13 @@ CCellRange CGridCtrl::GetUnobstructedNonFixedCellRange() const
 {
     CRect rect;
     GetClientRect(rect);
+    int i = 0;
 
     CCellID idTopLeft = GetTopleftNonFixedCell();
 
     // calc bottom
     int bottom = GetFixedRowHeight();
-    for (int i = idTopLeft.row; i < GetRowCount(); i++)
+    for (i = idTopLeft.row; i < GetRowCount(); i++)
     {
         bottom += GetRowHeight(i);
         if (bottom >= rect.bottom) break;
@@ -2782,7 +2785,7 @@ BOOL CGridCtrl::SetColumnCount(int nCols)
 
         // initialise column data
         for (int row = 0; row < m_nRows; row++)
-            for (col = startCol; col < GetColumnCount(); col++)
+            for (int col = startCol; col < GetColumnCount(); col++)
             {
                 GRID_ROW* pRow = m_RowData[row];
                 if (pRow) pRow->SetAt(col, CreateCell(row,col));
@@ -2827,7 +2830,7 @@ int CGridCtrl::InsertColumn(LPCTSTR strHeading,
     } 
     else
     {
-        m_arColWidths.InsertAt(nColumn, (int)0);
+        m_arColWidths.InsertAt(nColumn, (int)0, NULL);
         for (int row = 0; row < m_nRows; row++) 
         {
             GRID_ROW* pRow = m_RowData[row];
@@ -2878,7 +2881,7 @@ int CGridCtrl::InsertRow(LPCTSTR strHeading, int nRow /* = -1 */)
     } 
     else 
     {
-        m_arRowHeights.InsertAt(nRow, (int)0);
+        m_arRowHeights.InsertAt(nRow, (int)0, NULL);
         m_RowData.InsertAt(nRow, new GRID_ROW);
     }
     
@@ -3713,8 +3716,8 @@ void CGridCtrl::AutoSize()
         m_arRowHeights[nRow] = 0;
     
     CSize size;
-    for (nCol = 0; nCol < nNumColumns; nCol++)
-        for (nRow = 0; nRow < nNumRows; nRow++)
+    for (int nCol = 0; nCol < nNumColumns; nCol++)
+        for (int nRow = 0; nRow < nNumRows; nRow++)
         {
             size = GetCellExtent(nRow, nCol, pDC);
             if (size.cx > (int) m_arColWidths[nCol])  m_arColWidths[nCol] = size.cx;
@@ -3746,13 +3749,13 @@ void CGridCtrl::ExpandColumnsToFit()
     if (nDifference > 0)
     {
         int leftOver = nDifference % GetColumnCount();
-        for (i = 0; i < leftOver; i++)
+        for (int i = 0; i < leftOver; i++)
             m_arColWidths[i] += 1;
     } 
     else 
     {
         int leftOver = (-nDifference) % GetColumnCount();
-        for (i = 0; i < leftOver; i++)
+        for (int i = 0; i < leftOver; i++)
             m_arColWidths[i] -= 1;
     }
 
@@ -3777,13 +3780,13 @@ void CGridCtrl::ExpandRowsToFit()
     if (nDifference > 0)
     {
         int leftOver = nDifference % GetRowCount();
-        for (i = 0; i < leftOver; i++)
+        for (int i = 0; i < leftOver; i++)
             m_arRowHeights[i] += 1;
     } 
     else 
     {
         int leftOver = (-nDifference) % GetRowCount();
-        for (i = 0; i < leftOver; i++)
+        for (int i = 0; i < leftOver; i++)
             m_arRowHeights[i] -= 1;
     }
 
@@ -4815,7 +4818,7 @@ BOOL CGridCtrl::Save(LPCTSTR filename)
             File.WriteString((i==(nNumColumns-1))? _T("\n"):_T(","));
         }
 
-        for (i = 0; i < GetRowCount(); i++) {
+        for (int i = 0; i < GetRowCount(); i++) {
             for (int j = 0; j < nNumColumns; j++) {
                 File.WriteString(GetItemText(i,j));
                 File.WriteString((j==(nNumColumns-1))? _T("\n"):_T(","));

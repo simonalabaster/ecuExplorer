@@ -18,9 +18,9 @@ public:
 	frameRealtime();
 	virtual ~frameRealtime();
 
-	void OnParseSupportList(WPARAM wParam,LPARAM lParam);
-	void OnUpdateListItem(WPARAM wParam,LPARAM lParam);
-	void OnUpdateCSVFile(WPARAM wParam,LPARAM lParam);
+	LRESULT OnParseSupportList(WPARAM wParam,LPARAM lParam);
+	LRESULT OnUpdateListItem(WPARAM wParam,LPARAM lParam);
+	LRESULT OnUpdateCSVFile(WPARAM wParam,LPARAM lParam);
 	void OnContextMenu(CWnd* pWnd,CPoint ptMousePos);
 	void OnStartFileCapture();
 	void OnChooseLoggingDirectory();

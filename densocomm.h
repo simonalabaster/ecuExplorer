@@ -86,14 +86,14 @@ const static unsigned char kernel_rsp_error_bad_command				= 0xFF;
 class densocomm
 {
 private:
-	log *l;
+	eculog *l;
 	serial s;
 
 public:
 	densocomm(string portname);
 	~densocomm(void);
 
-	void addlog(log *_l);
+	void addlog(eculog *_l);
 	bool open();
 	void close();
 	void set_baud(int baudrate);

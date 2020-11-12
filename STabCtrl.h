@@ -109,7 +109,7 @@ public:
 public:
 	virtual ~CSTabCtrl();
 	virtual BOOL AttachControlToTab(CWnd * _pControl,INT _nTabNum);
-	virtual SetCurSel( int nItem );
+	virtual int SetCurSel( int nItem );
 
 	// Generated message map functions
 protected:

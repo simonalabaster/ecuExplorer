@@ -136,7 +136,7 @@ CATCHCATCH("frameRealtime::OnCreateClient()");
 	return TRUE;
 }
 
-void frameRealtime::OnParseSupportList(WPARAM wParam,LPARAM lParam)
+LRESULT frameRealtime::OnParseSupportList(WPARAM wParam,LPARAM lParam)
 {
 	CString sError;
 	unsigned short usBufferPointer = 0;
@@ -303,7 +303,7 @@ CATCHCATCH("frameRealtime::OnParseSupportList()");
 	if(bExceptionFlag == EXEPT_ABORT)
 		nuke();
 
-	return;
+	return ERR_SUCCESS;
 }
 
 void frameRealtime::OnContextMenu(CWnd* pWnd,CPoint ptMousePos)
@@ -1085,7 +1085,7 @@ CATCHCATCH("frameRealtime::OnViewItemDescription()");
 	return;
 }
 
-void frameRealtime::OnUpdateListItem(WPARAM wParam,LPARAM lParam)
+LRESULT frameRealtime::OnUpdateListItem(WPARAM wParam,LPARAM lParam)
 {
 	CString sError;
 	LPSTRUCT_LIVEQUERYITEM lpLiveQueryItem = (LPSTRUCT_LIVEQUERYITEM)lParam;
@@ -1097,7 +1097,7 @@ TRYTRY
 
 EXCEPTION_BOOKMARK(__LINE__)
 	if(lpParent->hThreadLiveQuery == NULL)
-		return;
+		return ERR_SUCCESS;
 
 EXCEPTION_BOOKMARK(__LINE__)
 	frameList* lpList_analogue = NULL;
@@ -1229,10 +1229,10 @@ CATCHCATCH("frameRealtime::OnUpdateListItem()");
 	if(bExceptionFlag == EXEPT_ABORT)
 		nuke();
 
-	return;
+	return ERR_SUCCESS;
 }
 
-void frameRealtime::OnUpdateCSVFile(WPARAM wParam,LPARAM lParam)
+LRESULT frameRealtime::OnUpdateCSVFile(WPARAM wParam,LPARAM lParam)
 {
 	CString sError;
 	POSITION pos = NULL;
@@ -1242,7 +1242,7 @@ TRYTRY
 
 EXCEPTION_BOOKMARK(__LINE__)
 	if(fpCSVCapture == NULL)
-		return;
+		return ERR_SUCCESS;
 
 EXCEPTION_BOOKMARK(__LINE__)
 	_timeb tbNow;
@@ -1306,7 +1306,7 @@ CATCHCATCH("frameRealtime::OnUpdateCSVFile()");
 	if(bExceptionFlag == EXEPT_ABORT)
 		nuke();
 
-	return;
+	return ERR_SUCCESS;
 }
 
 void frameRealtime::OnAutoAddNewLogFile()

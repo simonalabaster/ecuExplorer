@@ -18,8 +18,8 @@ public:
 	virtual ~frameDTCReader();
 
 	void ResizeSplitter();
-	void OnUpdateCurrentDTC(WPARAM wParam,LPARAM lParam);
-	void OnUpdateHistoricDTC(WPARAM wParam,LPARAM lParam);
+	LRESULT OnUpdateCurrentDTC(WPARAM wParam,LPARAM lParam);
+	LRESULT OnUpdateHistoricDTC(WPARAM wParam,LPARAM lParam);
 	void OnPauseDTC();
 
 public:
